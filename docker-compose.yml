@@ -1,0 +1,17 @@
+version: '3'
+services:
+  traefik:
+    image: traefik:2.8
+    container_name: traefik
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 443:443/tcp
+      - 80:80/tcp
+      # The Web UI port http://0.0.0.0:8080 (enabled by --api.insecure=true)
+      - 8080:8080/tcp
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yml:/traefik.yml:ro

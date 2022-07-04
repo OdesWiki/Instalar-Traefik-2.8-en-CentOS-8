@@ -1,1 +1,1 @@
-# Instalar-Traefik-2.8-en-CentOS-8
+# Como Instalar Traefik 2.8 en CentOS 8
